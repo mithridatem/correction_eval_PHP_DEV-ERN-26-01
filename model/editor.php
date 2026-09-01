@@ -31,7 +31,7 @@ function is_editor_exists(string $name): bool
 }
 
 //Méthode pour ajouter un éditeur
-function add_editor(array $editor): void
+function add_editor(array $editor): string
 {
     try {
         $sql = "INSERT INTO editor(editor_name) VALUE(?)";
@@ -40,5 +40,7 @@ function add_editor(array $editor): void
         $req->execute();
     } catch (PDOException $e) {
         echo $e->getMessage();
+        return "Erreur d'enregistrement";
     }
+    return "Editeur ajouté en BDD";
 }
