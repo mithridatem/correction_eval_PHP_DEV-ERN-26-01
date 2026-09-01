@@ -1,5 +1,6 @@
 <?php
 include 'model/editor.php';
+include 'tools.php';
 ?>
 <html lang="en">
 
@@ -27,7 +28,7 @@ include 'model/editor.php';
             </fieldset>
             <input type="submit" value="Ajouter" name="submit">
         </form>
-        <p class="info"><?= insert_editor() ?? "" ?></p>
+        <p class="info"><?= htmlspecialchars(insert_editor()) ?? "" ?></p>
     </main>
 </body>
 
@@ -38,9 +39,9 @@ function insert_editor(): string
 {
     if (isset($_POST["submit"])) {
         //Test si le champs est remplis
-        if (empty($_POST["editor_name"])) return "Veuillez remplir les champs du formulaire";
+        if (empty(sanitize($_POST["editor_name"]))) return "Veuillez remplir les champs du formulaire";
         //Test si l'éditeur existe déja en BDD
-        if (is_editor_exists($_POST["editor_name"])) return "L'éditeur existe déja";
+        if (is_editor_exists(sanitize($_POST["editor_name"]))) return "L'éditeur existe déja";
         //Ajout de l'éditeur en BDD
         add_editor($_POST);
         $message = "Editeur ajouté en BDD";
