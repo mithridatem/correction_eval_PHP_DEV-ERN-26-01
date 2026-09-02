@@ -1,4 +1,5 @@
 <?php
+//import de la connexion BDD
 include '../bdd/bdd_connect.php';
 
 //méthode pour récupérer la liste des catégories
