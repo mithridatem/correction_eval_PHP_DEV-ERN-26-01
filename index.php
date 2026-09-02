@@ -9,5 +9,9 @@
 </head>
 <body>
     <?php include 'navbar.php'; ?>
+    <main class="container-fluid">
+        <h1>Bienvenue sur la page d'accueil</h1>
+        <h2>Correction de l'évaluation PHP</h2>
+    </main>
 </body>
 </html>

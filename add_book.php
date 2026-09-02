@@ -1,5 +1,7 @@
 <?php
 include 'model/editor.php';
+include 'model/category.php';
+include 'model/book.php';
 include 'tools.php';
 ?>
 <html lang="en">
@@ -57,7 +59,7 @@ include 'tools.php';
                         Sélectionner un éditeur...
                     </option>
                     <?php foreach (get_all_editors() as $editor) : ?>
-                        <option value="<?= $editor["id"] ?>"><?= $editor["category_name"] ?></option>
+                        <option value="<?= $editor["id"] ?>"><?= $editor["editor_name"] ?></option>
                     <?php endforeach ?>
                 </select>
             </fieldset>

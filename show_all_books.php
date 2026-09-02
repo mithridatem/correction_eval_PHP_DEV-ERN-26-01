@@ -16,7 +16,19 @@ include 'tools.php';
 <body>
     <?php include 'navbar.php'; ?>
     <main class="container-fluid">
-        
+        <section>
+            <h1>Liste des livres</h1>
+            <?php foreach (get_all_books() as $book) : ?>
+                <article>
+                    <h2><?= htmlspecialchars($book["title"]) ?></h2>
+                    <p><?= htmlspecialchars($book["summary"]) ?></p>
+                    <p>Auteur: <?= htmlspecialchars($book["author"]) ?></p>
+                    <p>Date de publication: <?= htmlspecialchars($book["publish_at"]) ?></p>
+                    <p>Catégorie: <?= htmlspecialchars($book["category_name"]) ?></p>
+                    <p>Éditeur: <?= htmlspecialchars($book["editor_name"]) ?></p>
+                </article>
+            <?php endforeach ?>
+        </section>
     </main>
 </body>
 </html>
