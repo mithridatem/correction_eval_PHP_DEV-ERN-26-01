@@ -1,4 +1,4 @@
-<nav>
+<nav class="container-fluid">
     <ul>
         <li><a href="">Accueil</a></li>
         <li><a href="">Ajout éditeur</a></li>
