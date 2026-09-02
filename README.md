@@ -8,3 +8,7 @@ const BDD_NAME= "";
 const BDD_USERNAME = "";
 const BDD_PASSWORD = "";
 ```
+## 2 Démarrer le serveur PHP
+```
+php -S 127.0.0.1:8000
+```
