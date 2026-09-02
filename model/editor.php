@@ -1,8 +1,8 @@
 <?php
 //import de la connexion BDD
-include '../bdd/bdd_connect.php';
+require_once 'bdd/bdd_connect.php';
 
-//méthode pour récupérer la liste des catégories
+//méthode pour récupérer la liste des éditeurs
 function get_all_editors(): array
 {
     try {
@@ -37,7 +37,7 @@ function add_editor(array $editor): string
     try {
         $sql = "INSERT INTO editor(editor_name) VALUE(?)";
         $req = connect_bdd()->prepare($sql);
-        $req->bindValue(1, $editor["edito_name"], PDO::PARAM_STR);
+        $req->bindValue(1, $editor["editor_name"], PDO::PARAM_STR);
         $req->execute();
     } catch (PDOException $e) {
         echo $e->getMessage();

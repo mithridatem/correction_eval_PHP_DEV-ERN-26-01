@@ -1,6 +1,6 @@
 <?php
 //import de la connexion BDD
-include '../bdd/bdd_connect.php';
+require_once 'bdd/bdd_connect.php';
 
 //Méthode pour ajouter un livre avec catégorie et éditeur
 function add_book(array $book): void
